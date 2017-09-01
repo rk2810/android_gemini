@@ -24,6 +24,10 @@ PRODUCT_COPY_FILES := device/xiaomi/gemini/configs/apns-full-conf.xml:system/etc
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
+#vendor
+$(call inherit-product-if-exists, vendor/xiaomi/gemini/gemini-vendor.mk)
+
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := aosp_gemini
 PRODUCT_DEVICE := gemini
